@@ -1,0 +1,140 @@
+li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px;
+    box-shadow: var(--dropshadow);
+    list-style: none;
+    max-width: 100%;
+    max-height: 300px;
+    overflow-y: scroll;
+    padding: 15px;
+    margin-top: 15px;
+
+    div {
+        .date {
+            color: gray;
+            font-style: italic;
+            font-size: .9rem;
+            letter-spacing: 1px;
+            margin-top: 20px;
+        }
+    }
+
+    & button {
+        width: 30px;
+        height: 30px;
+        padding: 9px;
+        cursor: pointer;
+    }
+
+    dialog {
+        width: 320px;
+        height: 150px;
+        padding: 30px;
+        border-radius: 20px;
+        overflow-x: hidden;
+
+        div {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px;
+
+            & button {
+                text-align: center;
+                width: 80px;
+                height: 30px;
+                margin: 0 15px;
+            }
+        }
+    }
+}
+
+.todo-container {
+    box-shadow: inset 0 0.5rem 1rem #ccc;
+    border-radius: 10px;
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+    margin-top: 30px;
+    padding: 20px 40px;
+    overflow-x: scroll;
+
+
+    #add-task {
+        position: fixed;
+        bottom: 5%;
+        right: 3%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        filter: drop-shadow(var(--dropshadow));
+    }
+
+    .back-btn {
+        position: absolute;
+        top: 3%;
+        right: 3%;
+        border-radius: 50%;
+        filter: drop-shadow(2px 3px 2px rgb(152, 152, 152));
+        width: 40px;
+        height: 40px;
+        padding: 0;
+    }
+
+    button:hover {
+        transform: scale(.5rem);
+    }
+}
+
+#app .input-modal {
+    width: 350px;
+    height: 200px;
+    padding: 20px 10px;
+
+    textarea {
+        height: 85px;
+        width: 330px;
+        margin-bottom: 10px;
+        padding: 5px;
+    }
+
+    button {
+        margin-right: 20px;
+    }
+}
+
+dialog {
+    border-radius: 15px;
+    border: none;
+    margin: auto;
+    animation: scaleUp .3s;
+}
+
+dialog::backdrop {
+    backdrop-filter: blur(5px);
+}
+
+@keyframes scaleUp {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    #app .input-modal {
+        margin: 200px auto; 
+        width: 350px;
+        height: 200px;
+        padding: 20px 10px;
+    }
+}

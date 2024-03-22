@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap');
+
+header {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background: #ffff8794;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-style: normal;
+    height: 100vh;
+    width: 300px;
+    text-align: center;
+    padding: 15px;
+    z-index: 999;
+
+    i {
+        font-size: 1.1rem;
+        margin-right: 5px;
+    }
+
+    h1 {
+        position: absolute;
+        top: 2%;
+        left: 2%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 1.3rem;
+        font-weight: 200;
+        margin: 20px 10px;
+        
+    }
+
+    .open-button {
+        display: none;
+        transform: translateX(-50%);
+        animation: bounce .5s infinite linear;
+    }
+
+    .close-button {
+        display: none;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 80px;
+
+        button {
+            display: flex;
+            background: transparent;
+            color: var(--button-bg);
+            border-radius: 0;
+            letter-spacing: 4px;
+            width: 100%;
+            padding-left: 15px;
+        }
+
+        button:hover {
+            background: var(--button-bg);
+            color: #fff;
+        }
+    }
+
+    footer {
+        position: fixed;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+        bottom: 3%;
+
+        button {
+            background: transparent;
+            color: var(--button-bg);
+            border-radius: 0;
+            letter-spacing: 4px;
+            width: 100%;
+            padding-left: 15px;
+            margin-bottom: 30px;
+        }
+
+        button:hover {
+            color: #fff;
+        }
+    }
+}
+
+
+
+
+@media screen and (max-width: 1024px) {
+    header {
+        position: fixed;
+        background: hsla(60, 100%, 80%, 0.582);
+        backdrop-filter: blur(10px);
+        width: 250px;
+        height: 100vh;
+        transform: translateX(-100%);
+        transition: transform .4s ease-out;
+
+        .open-button {
+            display: block;
+            position: fixed;
+            top: 3%;
+            right: -22%;
+            opacity: 1;
+
+            i {
+                font-size: 1.5rem;
+            }
+        }
+
+        .close-button {
+            display: block;
+            position: absolute;
+            top: 2%;
+            right: 5%;
+            font-size: 1.5rem;
+            opacity: 0;
+
+            i {
+                font-size: 1.5rem;
+            }
+        }
+    }
+
+    header.open {
+        transform: translateX(0);
+
+        span {
+            opacity: 0;
+            position: fixed;
+            right: -10%;
+        }
+
+        .close-button {
+            opacity: 1;
+        }
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+}

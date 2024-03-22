@@ -1,0 +1,97 @@
+.hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+
+  .banner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(
+      165deg,
+      rgba(255, 255, 2, 0.716),
+      rgba(254, 254, 161, 0.587),
+      rgba(240, 240, 232, 0.594)
+    );
+    width: 100%;
+    height: 100%;
+    margin-bottom: 30px;
+    overflow: hidden;
+
+    h1 {
+      margin: 0 20px;
+    }
+
+    img {
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translateY(-30%) rotate(15deg);
+      z-index: -1;
+    }
+
+    button {
+      border-radius: 0;
+      width: 150px;
+    }
+  }
+
+  h1 {
+    font-family: "", sans-serif;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-style: normal;
+    font-size: 3rem;
+    font-weight: 200;
+  }
+
+  img {
+    margin: 5cap;
+    width: 400px;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .hero img {
+    width: 250px;
+  }
+
+  .banner {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    h1 {
+      text-align: center;
+      font-size: 2.3rem;
+    }
+
+    img {
+      width: 400px;
+      bottom: 0;
+    }
+
+    button {
+      margin-top: 30px;
+    }
+  }
+
+  .hero-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+
+    p {
+      text-align: center;
+      margin-top: 10px;
+    }
+  }
+};
+
+
