@@ -1,5 +1,5 @@
 :root {
-  --light-background: rgb(244, 252, 255);
+  --light-background: linear-gradient(75deg, rgb(0, 208, 255), rgb(120, 224, 248), rgb(204, 239, 247));
   --yellow: rgb(252, 228, 90);
   --neon-green: rgb(104, 255, 10);
   --button-bg: #2e2e2e;
@@ -13,3 +13,8 @@
   padding: 0;
 }
 
+body {
+  height: 100%;
+  width: 100%;
+  background: var(--light-background);
+}

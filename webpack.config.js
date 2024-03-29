@@ -5,9 +5,9 @@ module.exports = {
   entry: './src/index.js',
   output: {
     filename: 'main.js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'dist'),
   },
-  mode: "development",
+  mode: 'development',
   module: {
     rules: [
       {
@@ -25,7 +25,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/index.html',
       filename: 'index.html',
-      favicon: './src/assets/todo-favicon.png'
-    })
-  ]
+      favicon: './src/assets/favicon.png',
+    }),
+  ],
 };
