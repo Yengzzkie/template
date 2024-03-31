@@ -1,7 +1,6 @@
 :root {
-  --light-background: linear-gradient(75deg, rgb(0, 208, 255), rgb(120, 224, 248), rgb(204, 239, 247));
-  --yellow: rgb(252, 228, 90);
-  --neon-green: rgb(104, 255, 10);
+  --light-background: linear-gradient(135deg, rgb(0, 208, 255), rgb(89, 219, 248), rgb(174, 234, 248));
+  --dark-background: linear-gradient(135deg, rgb(0, 19, 96), rgb(20, 34, 89), rgb(36, 47, 91));
   --button-bg: #2e2e2e;
   --header-height: 85px;
   --dropshadow: 2px 3px 2px rgb(152, 152, 152);
@@ -18,3 +17,73 @@ body {
   width: 100%;
   background: var(--light-background);
 }
+
+#app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+section {
+  display: grid;
+  grid-auto-rows: auto;
+  border: 1px solid black;
+  border-radius: 20px;
+  height: 300px;
+  width: 90vw;
+  margin: 1rem;
+}
+
+#current-weather-section {
+  display: flex;
+  border: none;
+  height: 50vh;
+
+  & .current-weather-info > * {
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    margin-top: 10px;
+  }
+
+  & .current-weather-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    & .location {
+      font-size: 1.5rem;
+
+      i {
+        margin-left: 10px;
+      }
+    }
+
+    & .temp {
+      font-size: 8rem;
+      width: 100%;
+      padding-top: 15px;
+    }
+
+    & .condition {
+      font-size: 2rem;
+    }
+  }
+
+  
+  .weather-image {
+    display: flex;
+    /* border: 1px solid red; */
+    width: 100%;
+
+    & img {
+      margin: auto;
+      width: 10rem;
+    }
+  }
+}
+
