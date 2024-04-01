@@ -3,7 +3,8 @@
   --dark-background: linear-gradient(135deg, rgb(0, 19, 96), rgb(20, 34, 89), rgb(36, 47, 91));
   --button-bg: #2e2e2e;
   --header-height: 85px;
-  --dropshadow: 2px 3px 2px rgb(152, 152, 152);
+  --dropshadow: -2px -3px 2px rgb(234, 234, 234), 2px 3px 2px rgb(113, 113, 113);
+  --boxshadow: 3px 4px 2px rgb(113, 113, 113);
 }
 
 * {
@@ -34,6 +35,30 @@ section {
   height: 300px;
   width: 90vw;
   margin: 1rem;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+
+  input {
+    border: none;
+    border-radius: 15px;
+    height: 25px;
+    width: 200px;
+    padding: 3px 10px;
+    margin-right: 15px;
+  }
+
+  button {
+    color: #4d4d4d;
+    font-size: 1.2rem;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+  }
 }
 
 #current-weather-section {
@@ -87,3 +112,59 @@ section {
   }
 }
 
+#forecast-section {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(113, 113, 113, 0.491);
+  box-shadow: var(--boxshadow);
+  height: auto;
+  width: 100%;
+  max-width: 90vw;
+  padding: 15px;
+
+  h2 {
+    color: #fff;
+    text-align: center;
+  }
+
+  .forecast-container {
+    display: flex;
+    width: 100%;
+    height: auto;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    padding: 25px 30px;
+  }
+}
+
+/* For Chrome, Safari, and Opera */
+.forecast-container ::-webkit-scrollbar-thumb {
+  background-color: #0081c2; /* Color of the scrollbar thumb */
+}
+
+/* For Firefox */
+.forecast-container {
+  scroll-margin: 15px;
+  scrollbar-width: 25px;
+  scrollbar-color: #0081c2 transparent; /* Color of the scrollbar thumb and track */
+}
+
+.forecast-container > div {
+  flex: 0 0 auto;
+  width: 300px;
+  height: 230px;
+  box-shadow: var(--dropshadow);
+  border-radius: 15px;
+  margin: 0 10px;
+  padding: 30px 40px;
+}
+
+@media screen and (max-width: 1024px) {
+  .forecast-container {
+    padding: 25px;
+  }
+
+  .forecast-container > div {
+    width: 150px;
+  }
+}
