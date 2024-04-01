@@ -10,7 +10,10 @@
 <body>
 
     <header>
-        <input type="text">
+        <form action="#">
+            <input type="text" placeholder="Search location">
+            <button><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
     </header>
 
     <div id="app">
@@ -24,7 +27,12 @@
             </div>
             <div class="weather-image"></div>
         </section>
-        <section></section>
+
+        <section id="forecast-section">
+            <h2>7 day forecast</h1>
+            <div class="forecast-container"></div>
+        </section>
+
         <section></section>
     </div>
 
