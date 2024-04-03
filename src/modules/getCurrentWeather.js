@@ -21,6 +21,7 @@ export default async function getCurrentWeather() {
     console.log(currentWeather);
 
     const updateDate = currentWeather.last_updated;
+    console.log(updateDate)
     lastUpdate.textContent = `Last update : ${updateDate}`;
 
     const weatherTemp = currentWeather.temp_c;
