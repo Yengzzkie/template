@@ -5,7 +5,6 @@ export default async function getCurrentWeather() {
   const temp = document.querySelector('.temp');
   const feelsLikeTemp = document.querySelector('.feelslike');
   const condition = document.querySelector('.condition');
-  const minmax = document.querySelector('.minmax');
   const weatherIcon = document.querySelector('.weather-image');
   const lastUpdate = document.querySelector('.last-update')
   const timeOfDay = new Date().getHours();

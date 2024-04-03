@@ -5,6 +5,7 @@ export default async function getForecast() {
     const data = await getWeatherData();
     const forecastSection = document.getElementById("forecast-section");
     const forecastContainer = document.querySelector(".forecast-container");
+    forecastContainer.innerHTML = '';
 
     const sevenDayForecast = data.forecast.forecastday;
     console.log(sevenDayForecast);
