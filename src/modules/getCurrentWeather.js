@@ -7,21 +7,28 @@ export default async function getCurrentWeather() {
   const condition = document.querySelector('.condition');
   const minmax = document.querySelector('.minmax');
   const weatherIcon = document.querySelector('.weather-image');
+  const lastUpdate = document.querySelector('.last-update')
+  const timeOfDay = new Date().getHours();
+  console.log(timeOfDay);
+
+  if (timeOfDay > 18) {
+    document.body.classList.add('dark');
+  }
 
   try {
     const data = await getWeatherData();
     const currentWeather = data.current;
     console.log(currentWeather);
 
-    const lastUpdate = currentWeather.last_updated;
-    console.log(lastUpdate);
+    const updateDate = currentWeather.last_updated;
+    lastUpdate.textContent = `Last update : ${updateDate}`;
 
     const weatherTemp = currentWeather.temp_c;
     console.log(`${weatherTemp}°`);
     temp.textContent = `${weatherTemp}°`;
 
     const feelsLike = currentWeather.feelslike_c;
-    feelsLikeTemp.textContent = `Feels like ${feelsLike} Celsius`;
+    feelsLikeTemp.textContent = `Feels like ${feelsLike}°`;
     console.log(`Feels like ${feelsLike} Celsius`);
 
     const weatherCondition = currentWeather.condition.text;

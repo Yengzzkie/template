@@ -20,8 +20,14 @@ body {
   height: 100%;
   width: 100%;
   background: var(--light-background);
+  color: #505050;
   font-family: "Poppins", sans-serif;
   font-weight: 200;
+}
+
+body.dark {
+  background: var(--dark-background);
+  color: #fff;
 }
 
 #app {
@@ -74,7 +80,7 @@ form {
   & .current-weather-info > * {
     display: flex;
     justify-content: center;
-    color: #fff;
+    color: inherit;
     margin-top: 10px;
   }
 
@@ -93,6 +99,12 @@ form {
       }
     }
 
+    & .last-update {
+      font-style: italic;
+      font-size: .9rem;
+      color: #ffffff;
+    }
+
     & .temp {
       font-size: 8rem;
       width: 100%;
@@ -108,7 +120,7 @@ form {
   .weather-image {
     display: flex;
     /* border: 1px solid red; */
-    width: 100%;
+    width: 100px;
 
     & img {
       margin: auto;
@@ -128,7 +140,7 @@ form {
   padding: 15px;
 
   h2 {
-    color: #fff;
+    color: inherit;
     text-align: center;
   }
 
@@ -145,7 +157,6 @@ form {
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      color: #383838;
     }
   }
 }
